@@ -73,6 +73,10 @@ public class InspectionReports {
   private boolean published;
 
 
+  public InspectionReports() {
+  }
+
+
   public InspectionReports(String cal_year, String client, String client_id, String application_type, String identification_number, String test_according_to, String manufucturer, String department, String measuring_length, String profile, String report_url, String report_namr, String type_number, String serial_number, String device_type, String cross_section, String test_date, String next_test_date, String examiner, boolean published) {
 
     this.cal_year = cal_year;

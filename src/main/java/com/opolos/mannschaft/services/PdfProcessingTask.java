@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.*;
 
@@ -41,10 +40,12 @@ public class PdfProcessingTask {
                     try {
                         
                         //if report doesnot exist in our database
-                        if(pdfService.checkReportExistence(file.getName().trim())==false){
+                        if(pdfService.checkReportExistence(file.getName())==false){
                             //read Pdf file and insert into database
                             processPdf(file);
 
+                        }else{
+                            System.out.println("Report Already inserted");
                         }   
 
                     } catch (IOException e) {
@@ -53,7 +54,7 @@ public class PdfProcessingTask {
                 }
             }
         }else{
-            System.out.println("Folder Soesnt exist Yooooooooo");
+            System.out.println("Folder Doesnt exist Yooooooooo");
         }
     }
 
@@ -84,7 +85,7 @@ public class PdfProcessingTask {
 	        Set<String> vowelsSet = new HashSet <> (Arrays.asList(vowels));
             
             //check if client doesnot exist in user database
-            if(pdfService.checkClientExistence(file.getName()) ==false){
+            if(pdfService.checkClientExistence(client) ==false && pdfService.checkEmailExistence(client.toLowerCase()+"@opolos.com")){
                 pdfService.insertNewUser(
                     client,
                     client.replaceAll(" ", ""),
@@ -103,21 +104,27 @@ public class PdfProcessingTask {
 
 
 
-            }else{
+            }
 
 
                 //application type,identification number,test_according_to
 
-                String application_type=lines[getLineNumberWithFilter("Geräteart: ")].split(":  ")[1].split(" ")[0];
-                String identification_number=lines[getLineNumberWithFilter("Ident-. Nr.: ")].split(": ")[1];
+                String application_type=lines[getLineNumberWithFilter("Geräteart: ")].split(":  ")[1].trim().split(" ")[0];
+                String identification_number=lines[getLineNumberWithFilter("Ident-. Nr.: ")].split(": ")[1].trim().split(" ")[0];
+                
+                
+
                 String test_according_to=lines[14];
 
                 
                 //manufucturer,department,measuring length,  profile
-                String manufucturer = lines[getLineNumberWithFilter("Hersteller: ")].split(":  ")[1];
-                String department = lines[getLineNumberWithFilter("Abteilung: ")].split(":  ")[1];
+                String manufucturer = lines[getLineNumberWithFilter("Hersteller: ")].split("  ")[3].trim().equals("Seriennummer:")? null :lines[getLineNumberWithFilter("Hersteller: ")].split("  ")[3];
+                String department = lines[getLineNumberWithFilter("Abteilung: ")].split("  ")[3].trim().equals("Gerätetyp:") ? null:lines[getLineNumberWithFilter("Abteilung: ")].split("  ")[3];
+
                 String measuring_length = lines[getLineNumberWithFilter("Schutzleiterlänge (m): ")].split(":  ")[1];
-                String profile = lines[getLineNumberWithFilter("Messprofil: ")].split(":  ")[1];
+                String profile = lines[getLineNumberWithFilter("Messprofil: ")].split(":  ")[1].trim().replaceAll("  Prüfdatum", "");
+
+               
 
                 //manufucturer,department,measuring length,  profile,type
                 String type_number = lines[getLineNumberWithFilter("Typ:")];
@@ -125,6 +132,9 @@ public class PdfProcessingTask {
                 String device_type = lines[getLineNumberWithFilter("Gerätetyp: ")];
                 String cross_section = lines[getLineNumberWithFilter("Querschnitt (qmm): ")];
                 String test_date = lines[getLineNumberWithFilter("Prüfdatum: ")];
+
+
+
 
                 String last = test_date.substring(test_date.lastIndexOf(' ') + 1);
 
@@ -138,6 +148,7 @@ public class PdfProcessingTask {
 
                 String num =type_number.substring(17);
                 String examiner = lines[getLineNumberWithFilter("Prüfer: ")].split(": ")[1].split(" ")[0];
+
 
                  pdfService.insertNewReport(
                         Year.now().toString(),
@@ -161,7 +172,8 @@ public class PdfProcessingTask {
                         examiner,
                         true  
                  );
-            }
+            
+            
             
         }
     }

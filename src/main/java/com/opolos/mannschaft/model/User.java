@@ -19,50 +19,46 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotBlank
+
   @Size(max = 50)
   private String client_name;
 
-  @NotBlank
+
   @Size(max = 20)
   private String username;
 
-  @NotBlank
+
   @Size(max = 50)
   @Email
   private String email;
 
-  @NotBlank
+
   @Size(max = 120)
   private String password;
 
-  @NotBlank
+
   @Size(max = 120)
   private String client_id;
 
-  @NotBlank
+
   @Size(max = 120)
   private String street;
 
-  @NotBlank
+
   @Size(max = 120)
   private String address;
 
-  @NotBlank
+
   @Size(max = 120)
   private String website;
 
-  @NotBlank
+
   @Size(max = 120)
   private String contact_one;
 
-  @NotBlank
+
   @Size(max = 120)
   private String contact_two;
-
-  @NotBlank
-  @Size(max = 120)
-  private String instance_name;
 
 
 
@@ -72,13 +68,16 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
-  public User(String username2, String email2, String string, String client_id2, String street2, String address2, String website2, String contact_one2, String contact_two2, Set<String> roless, String instance_name2) {
+  @Size(max = 120)
+  private String instance_name;
+
+
+
+  public User() {
   }
 
 
-
-  public User(String client_name, String username, String email, String password, String client_id, 
-  String street, String address, String website, String contact_one, String contact_two,String instance_name, Set<Role> roles) {
+  public User(String client_name, String username, String email, String password, String client_id, String street, String address, String website, String contact_one, String contact_two, String instance_name) {
     this.client_name = client_name;
     this.username = username;
     this.email = email;
@@ -89,12 +88,16 @@ public class User {
     this.website = website;
     this.contact_one = contact_one;
     this.contact_two = contact_two;
-    this.roles = roles;
     this.instance_name = instance_name;
   }
 
 
-  public String getInstance_name() {
+
+
+
+
+
+public String getInstance_name() {
     return this.instance_name;
   }
 

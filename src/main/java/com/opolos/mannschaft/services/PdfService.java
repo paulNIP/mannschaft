@@ -48,7 +48,7 @@ public class PdfService {
             // Loop through the list of users and perform some action
             for (User user : users) {
                 // For demonstration, we'll just print the user details
-                if(user.getClient_name().equals(client)){
+                if(user.getUsername().equals(client)){
                     return true;
 
                 }
@@ -59,6 +59,25 @@ public class PdfService {
             return false;
 
     }
+
+    
+
+public Boolean checkEmailExistence(String email){
+    List<User> users= userRepository.findAll();
+    // Loop through the list of users and perform some action
+    for (User user : users) {
+        // For demonstration, we'll just print the user details
+        if(user.getEmail().equals(email)){
+            return true;
+
+        }
+        
+    }
+
+
+    return false;
+
+}
     public Boolean checkReportExistence(String report){
         
         List<InspectionReports> inspectionReports= inspectReportsRepository.findAll();
@@ -99,7 +118,6 @@ public class PdfService {
             website,
             contact_one,
             contact_two,
-            roless,
             instance_name
               
             );
