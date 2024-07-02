@@ -16,6 +16,8 @@ import java.util.*;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import java.nio.file.*;
+import java.io.IOException;
 
 
 @Component
@@ -31,31 +33,61 @@ public class PdfProcessingTask {
 
     @Scheduled(cron = "0 * * * * ?") // Every Minute
     public void processPdfFiles() {
-        File folder = new File(folderPath);
-        if (folder.exists() && folder.isDirectory()) {
-            File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
+        // Define the directory path
+        Path directoryPath = Paths.get(folderPath);
 
-            if (files != null) {
-                for (File file : files) {
-                    try {
-                        
-                        //if report doesnot exist in our database
-                        if(pdfService.checkReportExistence(file.getName())==false){
-                            //read Pdf file and insert into database
-                            processPdf(file);
+        // Use a try-with-resources statement to ensure the directory stream is closed
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directoryPath)) {
+            // Loop through the directory
+            for (Path entry : stream) {
+                // Check if the entry is a directory
+                if (Files.isDirectory(entry)) {
+                    // Multiple Directory Print the directory path
 
+                    File folder = new File(entry.toAbsolutePath().toString()+"/TestMasterData/Reports");
+                        if (folder.exists() && folder.isDirectory()) {
+                            File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
+
+                            if (files != null) {
+                                for (File file : files) {
+                                    try {
+                                        
+                                        //check if file name doesnot contain list
+                                        if(file.getName().contains("list")){
+
+                                        }else{
+
+                                            //store file path as file name
+                                            //if report doesnot exist in our database
+                                            if(pdfService.checkReportExistence(file.getPath())==false){
+                                                //read Pdf file and insert into database
+                                                processPdf(file);
+
+                                            }else{
+                                                System.out.println("Report Already inserted");
+                                            }  
+
+                                        }
+                                         
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
                         }else{
-                            System.out.println("Report Already inserted");
-                        }   
+                            System.out.println("Folder Doesnt exist Yooooooooo");
+                        }
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+
                 }
             }
-        }else{
-            System.out.println("Folder Doesnt exist Yooooooooo");
+        } catch (IOException | DirectoryIteratorException e) {
+            // Handle any exceptions that occur
+            System.err.println("Error reading directory: " + e.getMessage());
         }
+
+        
     }
 
     private void processPdf(File file) throws IOException {
@@ -83,12 +115,15 @@ public class PdfProcessingTask {
             String[] vowels = {"mod","user"};
 		
 	        Set<String> vowelsSet = new HashSet <> (Arrays.asList(vowels));
+
+            boolean emailExistence = pdfService.checkEmailExistence(client.replaceAll(" ", "").toLowerCase()+"@opolos.com");
+            boolean clientExistence= pdfService.checkClientExistence(client);
             
             //check if client doesnot exist in user database
-            if(pdfService.checkClientExistence(client) ==false && pdfService.checkEmailExistence(client.toLowerCase()+"@opolos.com")){
+            if(emailExistence && clientExistence){
                 pdfService.insertNewUser(
                     client,
-                    client.replaceAll(" ", ""),
+                    client,
                     client.replaceAll(" ", "").toLowerCase()+"@opolos.com",
                     "1234",
                     clientId,

@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.opolos.mannschaft.model.InspectionReports;
 
 public interface InspectReportsRepository extends JpaRepository<InspectionReports, Long>  {
+
+    // Iterable<InspectionReports> findByReport_namrContaining(String report_namr);
     
 }
