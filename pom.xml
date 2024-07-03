@@ -11,6 +11,7 @@
 	<groupId>com.opolos</groupId>
 	<artifactId>mannschaft</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>mannschaft</name>
 	<description>Project for Spring Boot downloading from Google Drive </description>
 	<url/>
