@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class InspectionReports {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
 
