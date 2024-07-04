@@ -122,26 +122,25 @@ public class PdfProcessingTask {
             boolean clientExistence= pdfService.checkClientExistence(client);
             
             //check if client doesnot exist in user database
-            // if(emailExistence && clientExistence){
-            //     pdfService.insertNewUser(
-            //         client,
-            //         client,
-            //         client.replaceAll(" ", "").toLowerCase()+"@opolos.com",
-            //         "1234",
-            //         clientId,
-            //         street,
-            //         address,
-            //         null,
-            //         null,
-            //         null,
-            //         vowelsSet,
-            //         "1"
+            if(emailExistence && clientExistence){
+                pdfService.insertNewUser(
+                    client,
+                    client,
+                    client.replaceAll(" ", "").toLowerCase()+"@opolos.com",
+                    "1234",
+                    clientId,
+                    street,
+                    address,
+                    null,
+                    null,
+                    null,
+                    vowelsSet,
+                    "1"
                 
-            //     );
+                );
 
 
-
-            // }
+            }
 
 
                 //application type,identification number,test_according_to
@@ -187,28 +186,28 @@ public class PdfProcessingTask {
                 String examiner = lines[getLineNumberWithFilter("Prüfer: ")].split(": ")[1].split(" ")[0];
 
 
-                //  pdfService.insertNewReport(
-                //         Year.now().toString(),
-                //         client,
-                //         clientId,
-                //         application_type,
-                //         identification_number,
-                //         test_according_to,
-                //         manufucturer,
-                //         department,
-                //         measuring_length,
-                //         profile,
-                //         filepath,
-                //         filename,
-                //         num,
-                //         serialNumber,
-                //         deviceType,
-                //         crossSection,
-                //         testDate,
-                //         next_test_date,
-                //         examiner,
-                //         true  
-                //  );
+                 pdfService.insertNewReport(
+                        Year.now().toString(),
+                        client,
+                        clientId,
+                        application_type,
+                        identification_number,
+                        test_according_to,
+                        manufucturer,
+                        department,
+                        measuring_length,
+                        profile,
+                        filepath,
+                        filename,
+                        num,
+                        serialNumber,
+                        deviceType,
+                        crossSection,
+                        testDate,
+                        next_test_date,
+                        examiner,
+                        true  
+                 );
             
             
             
