@@ -44,43 +44,62 @@ public class PdfProcessingTask {
                 if (Files.isDirectory(entry)) {
                     // Multiple Directory Print the directory path
 
-                    File folder = new File(entry.toAbsolutePath().toString()+"/TestMasterData/Reports");
-                        if (folder.exists() && folder.isDirectory()) {
-                            File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
+                    System.out.println(entry.toAbsolutePath().toString()+"/TestMasterData/Reports");
+                    if(entry.toAbsolutePath().toString().contains("Desktop") ||
+                       entry.toAbsolutePath().toString().contains("Music") ||
+                       entry.toAbsolutePath().toString().contains("Pictures") ||
+                       entry.toAbsolutePath().toString().contains("Sync") ||
+                       entry.toAbsolutePath().toString().contains("mannschaft") ||
+                       entry.toAbsolutePath().toString().contains("Documents") ||
+                       entry.toAbsolutePath().toString().contains("Downloads") ||
+                       entry.toAbsolutePath().toString().contains("Public") ||
+                       entry.toAbsolutePath().toString().contains("Templates") ||
+                       entry.toAbsolutePath().toString().contains("Videos") 
+                    
+                    ){
 
-                            if (files != null) {
-                                for (File file : files) {
-                                    try {
+                    }else{
+                        System.out.println(entry.toAbsolutePath().toString());
+
+                    }
+
+                    // File folder = new File(entry.toAbsolutePath().toString()+"/Reports");
+                    //     if (folder.exists() && folder.isDirectory()) {
+                    //         File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
+
+                    //         if (files != null) {
+                    //             for (File file : files) {
+                    //                 try {
                                         
-                                        //check if file name doesnot contain list
-                                        if(file.getName().contains("list")){
+                    //                     //check if file name doesnot contain list
+                    //                     if(file.getName().contains("list")){
 
-                                        }else{
+                    //                     }else{
 
-                                            //store file path as file name
-                                            //if report doesnot exist in our database
-                                            if(pdfService.checkReportExistence(file.getPath())==false){
-                                                //read Pdf file and insert into database
-                                                processPdf(file);
+                    //                         //store file path as file name
+                    //                         //if report doesnot exist in our database
+                    //                         if(pdfService.checkReportExistence(file.getPath())==false){
+                    //                             //read Pdf file and insert into database
+                    //                             processPdf(file);
 
-                                            }else{
-                                                System.out.println("Report Already inserted");
-                                            }  
+                    //                         }else{
+                    //                             System.out.println("Report Already inserted");
+                    //                         }  
 
-                                        }
+                    //                     }
                                          
 
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
-                        }else{
-                            System.out.println("Folder Doesnt exist Yooooooooo");
-                        }
+                    //                 } catch (IOException e) {
+                    //                     e.printStackTrace();
+                    //                 }
+                    //             }
+                    //         }
+                    //     }else{
+                    //         System.out.println("Folder Doesnt exist Yooooooooo");
+                    //     }
 
 
-                }
+                 }
             }
         } catch (IOException | DirectoryIteratorException e) {
             // Handle any exceptions that occur
