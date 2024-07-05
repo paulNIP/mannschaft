@@ -93,7 +93,7 @@ public class PdfProcessingTask {
                                 }
                             }
                         }else{
-                            System.out.println("Folder Doesnt exist Yooooooooo");
+                            System.out.println("Folder Doesnt exist Yooooooooo--"+ entry.toAbsolutePath().toString()+"/Reports");
                         }
 
                     }
