@@ -45,16 +45,12 @@ public class PdfProcessingTask {
                     // Multiple Directory Print the directory path
 
                     // Skip default folders
-                    if(entry.toAbsolutePath().toString().contains("Desktop") ||
-                       entry.toAbsolutePath().toString().contains("Music") ||
-                       entry.toAbsolutePath().toString().contains("Pictures") ||
+                    if(entry.toAbsolutePath().toString().contains("snap") ||
+                       entry.toAbsolutePath().toString().contains("smap") ||
+                       entry.toAbsolutePath().toString().contains("smap_version") ||
                        entry.toAbsolutePath().toString().contains("Sync") ||
                        entry.toAbsolutePath().toString().contains("mannschaft") ||
-                       entry.toAbsolutePath().toString().contains("Documents") ||
-                       entry.toAbsolutePath().toString().contains("Downloads") ||
-                       entry.toAbsolutePath().toString().contains("Public") ||
-                       entry.toAbsolutePath().toString().contains("Templates") ||
-                       entry.toAbsolutePath().toString().contains("Videos") ||
+                       entry.toAbsolutePath().toString().contains("os_smap_23_05_18_893.tgz") ||
                        entry.toAbsolutePath().toString().contains(".") 
                     
                     ){
