@@ -44,7 +44,7 @@ public class PdfProcessingTask {
                 if (Files.isDirectory(entry)) {
                     // Multiple Directory Print the directory path
 
-                    // System.out.println(entry.toAbsolutePath().toString()+"/TestMasterData/Reports");
+                    // Skip default folders
                     if(entry.toAbsolutePath().toString().contains("Desktop") ||
                        entry.toAbsolutePath().toString().contains("Music") ||
                        entry.toAbsolutePath().toString().contains("Pictures") ||
@@ -54,49 +54,51 @@ public class PdfProcessingTask {
                        entry.toAbsolutePath().toString().contains("Downloads") ||
                        entry.toAbsolutePath().toString().contains("Public") ||
                        entry.toAbsolutePath().toString().contains("Templates") ||
-                       entry.toAbsolutePath().toString().contains("Videos") 
+                       entry.toAbsolutePath().toString().contains("Videos") ||
+                       entry.toAbsolutePath().toString().contains(".") 
                     
                     ){
 
                     }else{
-                        System.out.println(entry.toAbsolutePath().toString());
+                        
+                        File folder = new File(entry.toAbsolutePath().toString()+"/Reports");
+                        if (folder.exists() && folder.isDirectory()) {
+                            File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
+
+                            if (files != null) {
+                                for (File file : files) {
+                                    try {
+                                        
+                                        //check if file name doesnot contain list
+                                        if(file.getName().contains("list")){
+
+                                        }else{
+
+                                            //store file path as file name
+                                            //if report doesnot exist in our database
+                                            if(pdfService.checkReportExistence(file.getPath())==false){
+                                                //read Pdf file and insert into database
+                                                processPdf(file);
+
+                                            }else{
+                                                System.out.println("Report Already inserted");
+                                            }  
+
+                                        }
+                                         
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }else{
+                            System.out.println("Folder Doesnt exist Yooooooooo");
+                        }
 
                     }
 
-                    // File folder = new File(entry.toAbsolutePath().toString()+"/Reports");
-                    //     if (folder.exists() && folder.isDirectory()) {
-                    //         File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
-
-                    //         if (files != null) {
-                    //             for (File file : files) {
-                    //                 try {
-                                        
-                    //                     //check if file name doesnot contain list
-                    //                     if(file.getName().contains("list")){
-
-                    //                     }else{
-
-                    //                         //store file path as file name
-                    //                         //if report doesnot exist in our database
-                    //                         if(pdfService.checkReportExistence(file.getPath())==false){
-                    //                             //read Pdf file and insert into database
-                    //                             processPdf(file);
-
-                    //                         }else{
-                    //                             System.out.println("Report Already inserted");
-                    //                         }  
-
-                    //                     }
-                                         
-
-                    //                 } catch (IOException e) {
-                    //                     e.printStackTrace();
-                    //                 }
-                    //             }
-                    //         }
-                    //     }else{
-                    //         System.out.println("Folder Doesnt exist Yooooooooo");
-                    //     }
+                    
 
 
                  }
