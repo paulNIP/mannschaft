@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.opolos.mannschaft.model.InspectionReports;
+import com.opolos.mannschaft.model.User;
 import com.opolos.mannschaft.repository.InspectReportsRepository;
+import com.opolos.mannschaft.repository.UserRepository;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -23,6 +26,9 @@ public class TestController {
 
   @Autowired
 	InspectReportsRepository inspectReportsRepository;
+
+  @Autowired
+  UserRepository userRepository;
 
   
   @GetMapping("/all")
@@ -44,6 +50,25 @@ public class TestController {
 			}
 
 			return new ResponseEntity<>(reports, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+  @GetMapping("/clients")
+	public ResponseEntity<List<User>> getAllUsers(@RequestParam(required = false) String name) {
+		try {
+			List<User> client = new ArrayList<User>();
+
+			if (name == null)
+        userRepository.findAll().forEach(client::add);
+
+
+			if (client.isEmpty()) {
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+			return new ResponseEntity<>(client, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
