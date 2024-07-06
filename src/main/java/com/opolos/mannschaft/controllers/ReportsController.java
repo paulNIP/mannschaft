@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.opolos.mannschaft.model.InspectionReports;
 import com.opolos.mannschaft.repository.InspectReportsRepository;
 
-@CrossOrigin(origins = "https://opolostechnologies.com", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api")
 public class ReportsController {
