@@ -189,6 +189,8 @@ public class PdfProcessingTask {
                 String cross_section = lines[getLineNumberWithFilter("Querschnitt (qmm): ")];
                 String test_date = lines[getLineNumberWithFilter("Prüfdatum: ")];
 
+                System.out.println(test_date);
+
 
 
 
