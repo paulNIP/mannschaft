@@ -20,44 +20,40 @@ public class User {
   private Long id;
 
 
-  @Size(max = 50)
+
   private String client_name;
 
 
-  @Size(max = 20)
   private String username;
 
 
-  @Size(max = 50)
   @Email
   private String email;
 
 
-  @Size(max = 120)
+
   private String password;
 
 
-  @Size(max = 120)
+
   private String client_id;
 
 
-  @Size(max = 120)
+
   private String street;
 
 
-  @Size(max = 120)
   private String address;
 
 
-  @Size(max = 120)
+
   private String website;
 
 
-  @Size(max = 120)
+
   private String contact_one;
 
 
-  @Size(max = 120)
   private String contact_two;
 
 
