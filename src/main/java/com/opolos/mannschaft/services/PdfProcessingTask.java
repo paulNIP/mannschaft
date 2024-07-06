@@ -137,10 +137,9 @@ public class PdfProcessingTask {
 
             String mailYo=client.replaceAll(" ", "").toLowerCase()+"@opolos.com";
             // boolean emailExistence = pdfService.checkEmailExistence(client.replaceAll(" ", "").toLowerCase()+"@opolos.com");
-            boolean clientExistence= pdfService.checkClientExistence(client,mailYo);
-            
+
             //check if client doesnot exist in user database
-            if(clientExistence=false){
+            if(pdfService.checkClientExistence(client,mailYo)==false){
                 pdfService.insertNewUser(
                     client,
                     client,
