@@ -200,7 +200,7 @@ public class PdfProcessingTask {
                 System.out.println(next.split("Nächster Prüftermin:")[1]);
 
                 // check if null
-                if(next.split("Nächster Prüftermin:")[1].length()!=0){
+                if(next.matches(".*\\d.*")){
                     String next_test_date = dateConvert(next.split("Nächster Prüftermin:")[1]);
 
                 }else{
