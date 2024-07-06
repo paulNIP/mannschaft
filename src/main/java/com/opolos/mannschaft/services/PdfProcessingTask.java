@@ -197,13 +197,13 @@ public class PdfProcessingTask {
 
                 String testDate=dateConvert(test_date);
                 String next = lines[getLineNumberWithFilter("Nächster Prüftermin:")].trim();
-
+                String next_test_date;
                 // check if null
                 if(next.matches(".*\\d.*")){
-                    String next_test_date = dateConvert(next.split("Nächster Prüftermin:")[1]);
+                    next_test_date = dateConvert(next.split("Nächster Prüftermin:")[1]);
 
                 }else{
-                    String next_test_date=null;
+                    next_test_date=null;
                 }
                 
 
