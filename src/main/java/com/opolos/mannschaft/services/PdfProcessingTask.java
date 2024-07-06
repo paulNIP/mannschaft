@@ -199,7 +199,8 @@ public class PdfProcessingTask {
                 String crossSection=cross_section.substring(cross_section.lastIndexOf(':') + 1);
 
                 String testDate=dateConvert(last);
-                String next = lines[getLineNumberWithFilter("Nächster Prüftermin: ")];
+                String next = lines[getLineNumberWithFilter("Nächster Prüftermin")];
+                System.out.println(next);
                 String next_test_date = dateConvert(next.substring(next.lastIndexOf(' ') + 1));
 
                 String num =type_number.substring(17);
