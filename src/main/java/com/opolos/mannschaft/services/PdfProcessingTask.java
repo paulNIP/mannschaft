@@ -257,7 +257,7 @@ public class PdfProcessingTask {
         DateTimeFormatter outputFormat = DateTimeFormat.forPattern("yyyy-MM-dd");
         
         // Parse the input date string to a DateTime object
-        DateTime dateTime = inputFormat.parseDateTime(inputDateString);
+        DateTime dateTime = inputFormat.parseDateTime(inputDateString.trim());
         
         // Format the DateTime object to the desired output format
         String outputDateString = outputFormat.print(dateTime);
