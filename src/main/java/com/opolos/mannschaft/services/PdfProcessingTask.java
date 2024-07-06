@@ -171,11 +171,11 @@ public class PdfProcessingTask {
 
                 
                 //manufucturer,department,measuring length,  profile
-                String manufucturer = lines[getLineNumberWithFilter("Hersteller: ")];
-                String department = lines[getLineNumberWithFilter("Abteilung: ")];
+                String manufucturer = lines[getLineNumberWithFilter("Hersteller: ")].split("Hersteller:")[1].split("Seriennummer:")[0];
+                String department = lines[getLineNumberWithFilter("Abteilung: ")].split("Abteilung:")[1].split("Gerätetyp")[0];
+                
 
-                System.out.println(manufucturer);
-                System.out.println(department);
+
 
                 String measuring_length = lines[getLineNumberWithFilter("Schutzleiterlänge (m): ")].split(":  ")[1];
                 String profile = lines[getLineNumberWithFilter("Messprofil: ")].split(":  ")[1].trim().replaceAll("  Prüfdatum", "");
