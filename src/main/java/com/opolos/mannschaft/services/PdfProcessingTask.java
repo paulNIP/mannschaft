@@ -135,15 +135,15 @@ public class PdfProcessingTask {
 		
 	        Set<String> vowelsSet = new HashSet <> (Arrays.asList(vowels));
 
-            String mailYo=client.replaceAll(" ", "").toLowerCase()+"@opolos.com";
+            String mailYo=client.trim().replaceAll(" ", "").toLowerCase()+"@opolos.com";
             // boolean emailExistence = pdfService.checkEmailExistence(client.replaceAll(" ", "").toLowerCase()+"@opolos.com");
 
             //check if client doesnot exist in user database
-            if(pdfService.checkClientExistence(client,mailYo)==false){
+            if(pdfService.checkClientExistence(client.trim(),mailYo)==false){
                 pdfService.insertNewUser(
                     client,
-                    client,
-                    client.replaceAll(" ", "").toLowerCase()+"@opolos.com",
+                    client.trim(),
+                    client.trim().replaceAll(" ", "").toLowerCase()+"@opolos.com",
                     "1234",
                     clientId,
                     street,
