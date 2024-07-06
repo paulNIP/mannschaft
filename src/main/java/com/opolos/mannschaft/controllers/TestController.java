@@ -19,7 +19,6 @@ import com.opolos.mannschaft.model.User;
 import com.opolos.mannschaft.repository.InspectReportsRepository;
 import com.opolos.mannschaft.repository.UserRepository;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/test")
 public class TestController {

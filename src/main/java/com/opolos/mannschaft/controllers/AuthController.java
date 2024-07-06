@@ -33,7 +33,7 @@ import com.opolos.mannschaft.repository.UserRepository;
 import com.opolos.mannschaft.security.jwt.JwtUtils;
 import com.opolos.mannschaft.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
