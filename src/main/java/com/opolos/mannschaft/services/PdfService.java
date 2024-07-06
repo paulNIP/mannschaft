@@ -43,12 +43,12 @@ public class PdfService {
         }
     }
 
-    public Boolean checkClientExistence(String client){
+    public Boolean checkClientExistence(String client,String mail){
             List<User> users= userRepository.findAll();
             // Loop through the list of users and perform some action
             for (User user : users) {
                 // For demonstration, we'll just print the user details
-                if(user.getUsername().equals(client)){
+                if(user.getUsername().equals(client)&&user.getEmail().equals(mail)){
                     return true;
 
                 }
