@@ -224,7 +224,7 @@ public class PdfProcessingTask {
                         measuring_length,
                         profile,
                         filepath,
-                        filename,
+                        filepath,
                         num,
                         serialNumber,
                         deviceType,
