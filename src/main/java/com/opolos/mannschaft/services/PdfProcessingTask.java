@@ -187,20 +187,15 @@ public class PdfProcessingTask {
                 String serial_number = lines[getLineNumberWithFilter("Seriennummer:")];
                 String device_type = lines[getLineNumberWithFilter("Gerätetyp: ")];
                 String cross_section = lines[getLineNumberWithFilter("Querschnitt (qmm): ")];
-                String test_date = lines[getLineNumberWithFilter("Prüfdatum: ")];
-
-                System.out.println(test_date);
+                String test_date = lines[getLineNumberWithFilter("Prüfdatum: ")].split("Prüfdatum: ")[1];
 
 
-
-
-                String last = test_date.substring(test_date.lastIndexOf(' ') + 1);
 
                 String serialNumber=serial_number.substring(serial_number.lastIndexOf(':') + 1);
                 String deviceType=device_type.substring(device_type.lastIndexOf(':') + 1);
                 String crossSection=cross_section.substring(cross_section.lastIndexOf(':') + 1);
 
-                String testDate=dateConvert(last);
+                String testDate=dateConvert(test_date);
                 String next = lines[getLineNumberWithFilter("Nächster Prüftermin")];
                 System.out.println(next);
                 String next_test_date = dateConvert(next.substring(next.lastIndexOf(' ') + 1));
