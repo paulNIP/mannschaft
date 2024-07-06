@@ -197,7 +197,7 @@ public class PdfProcessingTask {
 
                 String testDate=dateConvert(test_date);
                 String next = lines[getLineNumberWithFilter("Nächster Prüftermin:")].trim();
-                System.out.println(next.split("Nächster Prüftermin:")[1]);
+                System.out.println(next);
                 // String next_test_date = dateConvert(next.trim());
 
                 String num =type_number.substring(17);
