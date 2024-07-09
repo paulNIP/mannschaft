@@ -234,7 +234,7 @@ public class PdfProcessingTask {
                         true  
                  );
 
-                String newDestination="/var/www/html/mannschaft-project-files/"+file.getPath().replace("/root/","");
+                String newDestination="/var/www/html/"+filename;
 
                 try {
                     copyFileWithDirectories(Paths.get(filepath), Paths.get(newDestination));
