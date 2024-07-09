@@ -233,6 +233,15 @@ public class PdfProcessingTask {
                         examiner,
                         true  
                  );
+
+                String newDestination="/var/www/html/mannschaft-project-files/"+file.getPath().replace("/root/","");
+
+                try {
+                    copyFileWithDirectories(Paths.get(filepath), Paths.get(newDestination));
+                    System.out.println("File copied successfully!");
+                } catch (IOException e) {
+                    System.err.println("Failed to copy file: " + e.getMessage());
+                }
             
             
             
@@ -270,6 +279,16 @@ public class PdfProcessingTask {
         String outputDateString = outputFormat.print(dateTime);
 
         return outputDateString;
+    }
+
+
+    public static void copyFileWithDirectories(Path source, Path destination) throws IOException {
+        // Create parent directories if they don't exist
+        if (destination.getParent() != null) {
+            Files.createDirectories(destination.getParent());
+        }
+        // Copy file to destination
+        Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
     }
 
 
