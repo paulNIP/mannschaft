@@ -234,7 +234,7 @@ public class PdfProcessingTask {
                         true  
                  );
 
-                String newDestination="/var/www/html/"+filename;
+                String newDestination="/var/www/html/pdfs/"+file;
 
                 try {
                     copyFileWithDirectories(Paths.get(filepath), Paths.get(newDestination));
