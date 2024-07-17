@@ -43,9 +43,7 @@ public class PdfService {
         }
     }
 
-    public List<Object[]> getRecordsGroupedByField(String groupField) {
-        return inspectReportsRepository.findGroupedByField(groupField);
-    }
+    
 
     public Boolean checkClientExistence(String client,String mail){
             List<User> users= userRepository.findAll();

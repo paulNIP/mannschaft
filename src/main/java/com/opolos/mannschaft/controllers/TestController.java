@@ -78,13 +78,9 @@ public class TestController {
 		}
 	}
 
-	@GetMapping("/barcode_scan_results")
-    public List<Object[]> getRecordsGroupedByField(@RequestParam String groupField) {
-        return pdfService.getRecordsGroupedByField(groupField);
-    }
 
 
-
+	
 
 
   @GetMapping("/user")
