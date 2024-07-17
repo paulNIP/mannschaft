@@ -43,6 +43,10 @@ public class PdfService {
         }
     }
 
+    public List<Object[]> getRecordsGroupedByField(String groupField) {
+        return inspectReportsRepository.findGroupedByField(groupField);
+    }
+
     public Boolean checkClientExistence(String client,String mail){
             List<User> users= userRepository.findAll();
             // Loop through the list of users and perform some action
@@ -60,9 +64,6 @@ public class PdfService {
 
     }
 
-    public List<InspectionReports> getRecordsByBarCode(String clientId) {
-        return inspectReportsRepository.findAllByBarCodeRange(clientId);
-    }
 
     
 

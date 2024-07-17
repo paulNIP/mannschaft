@@ -12,7 +12,7 @@ public interface InspectReportsRepository extends JpaRepository<InspectionReport
 
     // Iterable<InspectionReports> findByReport_namrContaining(String report_namr);
 
-    @Query("SELECT r FROM InspectionReports r WHERE r.clientid = :clientId  ORDER BY r.test_date")
-    List<InspectionReports> findAllByBarCodeRange(@Param("clientId") String clientId);
+    @Query("SELECT * FROM InspectionReports r WHERE r.clientid = :clientid GROUP BY r.test_date DESC")
+    List<Object[]> findGroupedByField(@Param("clientid") String clientid);
     
 }

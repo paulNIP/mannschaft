@@ -78,12 +78,14 @@ public class TestController {
 		}
 	}
 
-
-
-	@GetMapping("/barcodescan_results")
-    public List<InspectionReports> getRecords(@RequestParam String clientId) {
-        return pdfService.getRecordsByBarCode(clientId);
+	@GetMapping("/barcode_scan_results")
+    public List<Object[]> getRecordsGroupedByField(@RequestParam String groupField) {
+        return pdfService.getRecordsGroupedByField(groupField);
     }
+
+
+
+
 
   @GetMapping("/user")
   @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
