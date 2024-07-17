@@ -14,7 +14,7 @@ public interface InspectReportsRepository extends JpaRepository<InspectionReport
 
     // Iterable<InspectionReports> findByReport_namrContaining(String report_namr);
 
-    @Query("SELECT r FROM InspectionReports r WHERE r.clientid = :clientId")
+    @Query("SELECT r FROM InspectionReports r WHERE r.client_id = :clientId")
     List<InspectionReports> findByCustomCriteria(@Param("clientId") String clientId);
 
 
