@@ -60,6 +60,10 @@ public class PdfService {
 
     }
 
+    public List<InspectionReports> getRecordsByBarCode(String clientId) {
+        return inspectReportsRepository.findAllByBarCodeRange(clientId);
+    }
+
     
 
 public Boolean checkEmailExistence(String email){

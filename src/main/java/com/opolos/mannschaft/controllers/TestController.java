@@ -18,6 +18,7 @@ import com.opolos.mannschaft.model.InspectionReports;
 import com.opolos.mannschaft.model.User;
 import com.opolos.mannschaft.repository.InspectReportsRepository;
 import com.opolos.mannschaft.repository.UserRepository;
+import com.opolos.mannschaft.services.PdfService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -29,6 +30,9 @@ public class TestController {
 
   @Autowired
   UserRepository userRepository;
+
+  @Autowired
+  PdfService pdfService;
 
   
   @GetMapping("/all")
@@ -73,6 +77,13 @@ public class TestController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
+
+
+	@GetMapping("/barcodescan_results")
+    public List<InspectionReports> getRecords(@RequestParam String clientId) {
+        return pdfService.getRecordsByBarCode(clientId);
+    }
 
   @GetMapping("/user")
   @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
