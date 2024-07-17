@@ -79,6 +79,12 @@ public class TestController {
 	}
 
 
+	@GetMapping("/barcodescan_results")
+    public List<InspectionReports> getRecordsByCustomCriteria(@RequestParam String fieldValue) {
+        return pdfService.getRecordsByCustomCriteria(fieldValue);
+    }
+
+
 
 	
 
