@@ -67,6 +67,26 @@ public class PdfService {
 
     }
 
+    public List<InspectionReports> searchReports(String searchTerm) {
+        return inspectReportsRepository.search(searchTerm);
+    }
+
+    public List<String> getDistinctYear() {
+        return inspectReportsRepository.findDistinctYear();
+    }
+
+    public List<String> getDistinctClient() {
+        return inspectReportsRepository.findDistinctClient();
+    }
+
+    public List<String> getDistinctExaminer() {
+        return inspectReportsRepository.findDistinctExaminer();
+    }
+
+    public List<String> getDistinctDepartment() {
+        return inspectReportsRepository.findDistinctDepartment();
+    }
+
 
     
 

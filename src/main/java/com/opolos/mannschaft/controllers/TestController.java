@@ -84,6 +84,31 @@ public class TestController {
         return pdfService.getRecordsByCustomCriteria(fieldValue);
     }
 
+  @GetMapping("/search_reports")
+  public List<InspectionReports> search(@RequestParam String searchTerm) {
+      return pdfService.searchReports(searchTerm);
+  }
+
+  @GetMapping("/distinct-report-year")
+    public List<String> getDistinctYear() {
+        return pdfService.getDistinctYear();
+    }
+
+    @GetMapping("/distinct-report-client")
+    public List<String> getDistinctClient() {
+        return pdfService.getDistinctClient();
+    }
+
+    @GetMapping("/distinct-report-examiner")
+    public List<String> getDistinctExaminer() {
+        return pdfService.getDistinctExaminer();
+    }
+
+    @GetMapping("/distinct-report-department")
+    public List<String> getDistinctDepartment() {
+        return pdfService.getDistinctDepartment();
+    }
+
 
 
 	
