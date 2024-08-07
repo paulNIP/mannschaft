@@ -5,7 +5,6 @@ import java.util.Set;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -29,8 +28,6 @@ public class User {
 
   @Email
   private String email;
-
-
 
   private String password;
 

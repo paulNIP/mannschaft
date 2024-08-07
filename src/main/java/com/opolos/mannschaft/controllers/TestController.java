@@ -2,6 +2,7 @@ package com.opolos.mannschaft.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,16 +10,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.google.firebase.messaging.FirebaseMessagingException;
+import com.opolos.mannschaft.dto.AllDevicesNotificationRequest;
+import com.opolos.mannschaft.dto.DeviceNotificationRequest;
+import com.opolos.mannschaft.dto.NotificationSubscriptionRequest;
+import com.opolos.mannschaft.dto.TopicNotificationRequest;
 import com.opolos.mannschaft.model.InspectionReports;
 import com.opolos.mannschaft.model.User;
 import com.opolos.mannschaft.repository.InspectReportsRepository;
 import com.opolos.mannschaft.repository.UserRepository;
+import com.opolos.mannschaft.services.NotificationService;
 import com.opolos.mannschaft.services.PdfService;
+
+import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -33,6 +43,9 @@ public class TestController {
 
   @Autowired
   PdfService pdfService;
+
+  @Autowired
+  NotificationService notificationService;
 
   
   @GetMapping("/all")
@@ -131,4 +144,61 @@ public class TestController {
   public String adminAccess() {
     return "Admin Board.";
   }
+
+  
+
+    @PostMapping("/send-to-device")
+    public ResponseEntity<String> sendNotification(@RequestBody @Valid DeviceNotificationRequest request) {
+        try {
+            notificationService.sendNotificationToDevice(request);
+            return ResponseEntity.ok("Notification sent successfully.");
+        } catch (FirebaseMessagingException | ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send notification.");
+        }
+    }
+
+    @PostMapping("/send-to-topic")
+    public ResponseEntity<String> sendNotificationToTopic(@RequestBody @Valid TopicNotificationRequest request) {
+        try {
+            notificationService.sendPushNotificationToTopic(request);
+            return ResponseEntity.ok("Notification sent successfully.");
+        } catch (FirebaseMessagingException | ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send notification.");
+        }
+    }
+
+    @PostMapping("/send-to-all")
+    public ResponseEntity<String> sendNotificationToAll(@RequestBody @Valid AllDevicesNotificationRequest request) {
+        try {
+            notificationService.sendMulticastNotification(request);
+            return ResponseEntity.ok("Multicast notification sent successfully.");
+        } catch (FirebaseMessagingException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send multicast notification.");
+        }
+    }
+
+    @PostMapping("/subscribe")
+    public ResponseEntity<String> subscribeToTopic(@RequestBody @Valid NotificationSubscriptionRequest request) {
+        try {
+            notificationService.subscribeDeviceToTopic(request);
+            return ResponseEntity.ok("Device subscribed to the topic successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to subscribe device to the topic.");
+        }
+    }
+
+    @PostMapping("/unsubscribe")
+    public ResponseEntity<String> unsubscribeFromTopic(@RequestBody @Valid NotificationSubscriptionRequest request) {
+        try {
+            notificationService.unsubscribeDeviceFromTopic(request);
+            return ResponseEntity.ok("Device unsubscribed from the topic successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to unsubscribe device from the topic.");
+        }
+    }
 }

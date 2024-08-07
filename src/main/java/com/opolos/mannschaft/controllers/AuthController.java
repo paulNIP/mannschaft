@@ -43,14 +43,17 @@ public class AuthController {
   @Autowired
   UserRepository userRepository;
 
+
   @Autowired
   RoleRepository roleRepository;
+
 
   @Autowired
   PasswordEncoder encoder;
 
   @Autowired
   JwtUtils jwtUtils;
+
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -140,6 +143,10 @@ public class AuthController {
     user.setRoles(roles);
     userRepository.save(user);
 
+
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
+
+
+
 }

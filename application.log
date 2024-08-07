@@ -1,0 +1,341 @@
+2024-08-07T06:43:31.037+03:00  INFO 42277 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Starting MannschaftApplication using Java 17.0.10 with PID 42277 (/Users/paul85alex/Desktop/mannschaft/target/classes started by paul85alex in /Users/paul85alex/Desktop/mannschaft)
+2024-08-07T06:43:31.039+03:00 DEBUG 42277 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-08-07T06:43:31.041+03:00  INFO 42277 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T06:43:33.088+03:00  INFO 42277 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T06:43:33.190+03:00  INFO 42277 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 3 JPA repository interfaces.
+2024-08-07T06:43:34.197+03:00  INFO 42277 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-07T06:43:34.220+03:00  INFO 42277 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T06:43:34.224+03:00  INFO 42277 --- [mannschaft] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-07T06:43:34.364+03:00  INFO 42277 --- [mannschaft] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T06:43:34.372+03:00  INFO 42277 --- [mannschaft] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3249 ms
+2024-08-07T06:43:34.735+03:00  INFO 42277 --- [mannschaft] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T06:43:34.866+03:00  INFO 42277 --- [mannschaft] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T06:43:34.973+03:00  INFO 42277 --- [mannschaft] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T06:43:35.383+03:00  INFO 42277 --- [mannschaft] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T06:43:35.429+03:00  INFO 42277 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T06:43:35.560+03:00  INFO 42277 --- [mannschaft] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d3d76b4
+2024-08-07T06:43:35.562+03:00  INFO 42277 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T06:43:35.617+03:00  WARN 42277 --- [mannschaft] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T06:43:37.122+03:00  INFO 42277 --- [mannschaft] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T06:43:37.285+03:00  INFO 42277 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:43:37.858+03:00 DEBUG 42277 --- [mannschaft] [main] c.o.m.security.jwt.AuthTokenFilter       : Filter 'authenticationJwtTokenFilter' configured for use
+2024-08-07T06:43:37.964+03:00  INFO 42277 --- [mannschaft] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-07T06:43:37.965+03:00  WARN 42277 --- [mannschaft] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-07T06:43:38.020+03:00  WARN 42277 --- [mannschaft] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'notificationController' defined in file [/Users/paul85alex/Desktop/mannschaft/target/classes/com/opolos/mannschaft/controllers/NotificationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'notificationService' defined in file [/Users/paul85alex/Desktop/mannschaft/target/classes/com/opolos/mannschaft/services/NotificationService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'firebaseApp' defined in class path resource [com/opolos/mannschaft/config/FirebaseConfig.class]: Failed to instantiate [com.google.firebase.FirebaseApp]: Factory method 'firebaseApp' threw exception with message: class path resource [google-services.json] cannot be opened because it does not exist
+2024-08-07T06:43:38.024+03:00  INFO 42277 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:43:38.031+03:00  INFO 42277 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-07T06:43:38.040+03:00  INFO 42277 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-07T06:43:38.043+03:00  INFO 42277 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-07T06:43:38.062+03:00  INFO 42277 --- [mannschaft] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-07T06:43:38.099+03:00 ERROR 42277 --- [mannschaft] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'notificationController' defined in file [/Users/paul85alex/Desktop/mannschaft/target/classes/com/opolos/mannschaft/controllers/NotificationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'notificationService' defined in file [/Users/paul85alex/Desktop/mannschaft/target/classes/com/opolos/mannschaft/services/NotificationService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'firebaseApp' defined in class path resource [com/opolos/mannschaft/config/FirebaseConfig.class]: Failed to instantiate [com.google.firebase.FirebaseApp]: Factory method 'firebaseApp' threw exception with message: class path resource [google-services.json] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1357) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.opolos.mannschaft.MannschaftApplication.main(MannschaftApplication.java:30) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'notificationService' defined in file [/Users/paul85alex/Desktop/mannschaft/target/classes/com/opolos/mannschaft/services/NotificationService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'firebaseApp' defined in class path resource [com/opolos/mannschaft/config/FirebaseConfig.class]: Failed to instantiate [com.google.firebase.FirebaseApp]: Factory method 'firebaseApp' threw exception with message: class path resource [google-services.json] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1357) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'firebaseApp' defined in class path resource [com/opolos/mannschaft/config/FirebaseConfig.class]: Failed to instantiate [com.google.firebase.FirebaseApp]: Factory method 'firebaseApp' threw exception with message: class path resource [google-services.json] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 33 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.google.firebase.FirebaseApp]: Factory method 'firebaseApp' threw exception with message: class path resource [google-services.json] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 47 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [google-services.json] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215) ~[spring-core-6.1.10.jar:6.1.10]
+	at com.opolos.mannschaft.config.FirebaseConfig.firebaseApp(FirebaseConfig.java:19) ~[classes/:na]
+	at com.opolos.mannschaft.config.FirebaseConfig$$SpringCGLIB$$0.CGLIB$firebaseApp$0(<generated>) ~[classes/:na]
+	at com.opolos.mannschaft.config.FirebaseConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-6.1.10.jar:6.1.10]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348) ~[spring-context-6.1.10.jar:6.1.10]
+	at com.opolos.mannschaft.config.FirebaseConfig$$SpringCGLIB$$0.firebaseApp(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 48 common frames omitted
+
+2024-08-07T06:44:41.514+03:00  INFO 42362 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Starting MannschaftApplication using Java 17.0.10 with PID 42362 (/Users/paul85alex/Desktop/mannschaft/target/classes started by paul85alex in /Users/paul85alex/Desktop/mannschaft)
+2024-08-07T06:44:41.517+03:00 DEBUG 42362 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-08-07T06:44:41.518+03:00  INFO 42362 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T06:44:42.660+03:00  INFO 42362 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T06:44:42.751+03:00  INFO 42362 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2024-08-07T06:44:43.615+03:00  INFO 42362 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-07T06:44:43.632+03:00  INFO 42362 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T06:44:43.632+03:00  INFO 42362 --- [mannschaft] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-07T06:44:43.717+03:00  INFO 42362 --- [mannschaft] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T06:44:43.718+03:00  INFO 42362 --- [mannschaft] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2110 ms
+2024-08-07T06:44:43.904+03:00  INFO 42362 --- [mannschaft] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T06:44:43.985+03:00  INFO 42362 --- [mannschaft] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T06:44:44.047+03:00  INFO 42362 --- [mannschaft] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T06:44:44.443+03:00  INFO 42362 --- [mannschaft] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T06:44:44.498+03:00  INFO 42362 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T06:44:44.667+03:00  INFO 42362 --- [mannschaft] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e3252
+2024-08-07T06:44:44.669+03:00  INFO 42362 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T06:44:44.714+03:00  WARN 42362 --- [mannschaft] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T06:44:46.125+03:00  INFO 42362 --- [mannschaft] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T06:44:46.230+03:00  INFO 42362 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:44:46.823+03:00 DEBUG 42362 --- [mannschaft] [main] c.o.m.security.jwt.AuthTokenFilter       : Filter 'authenticationJwtTokenFilter' configured for use
+2024-08-07T06:44:46.914+03:00  INFO 42362 --- [mannschaft] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-07T06:44:46.916+03:00  WARN 42362 --- [mannschaft] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-07T06:44:47.148+03:00  INFO 42362 --- [mannschaft] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-07T06:44:49.264+03:00  WARN 42362 --- [mannschaft] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T06:44:50.275+03:00  WARN 42362 --- [mannschaft] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+2024-08-07T06:44:50.278+03:00  INFO 42362 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:44:50.281+03:00  INFO 42362 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-07T06:44:50.338+03:00  INFO 42362 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-07T06:44:50.342+03:00  INFO 42362 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-07T06:44:50.401+03:00  INFO 42362 --- [mannschaft] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-07T06:44:50.467+03:00 ERROR 42362 --- [mannschaft] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.opolos.mannschaft.MannschaftApplication.main(MannschaftApplication.java:30) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at io.github.waileong.fcm.config.FcmConnectionConfiguration.fcmRestClient(FcmConnectionConfiguration.java:139) ~[spring-boot-fcm-1.0.3.jar:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 20 common frames omitted
+
+2024-08-07T06:45:53.117+03:00  INFO 42440 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Starting MannschaftApplication using Java 17.0.10 with PID 42440 (/Users/paul85alex/Desktop/mannschaft/target/classes started by paul85alex in /Users/paul85alex/Desktop/mannschaft)
+2024-08-07T06:45:53.122+03:00 DEBUG 42440 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-08-07T06:45:53.123+03:00  INFO 42440 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T06:45:54.571+03:00  INFO 42440 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T06:45:54.715+03:00  INFO 42440 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 3 JPA repository interfaces.
+2024-08-07T06:45:55.611+03:00  INFO 42440 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-07T06:45:55.629+03:00  INFO 42440 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T06:45:55.630+03:00  INFO 42440 --- [mannschaft] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-07T06:45:55.729+03:00  INFO 42440 --- [mannschaft] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T06:45:55.730+03:00  INFO 42440 --- [mannschaft] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2423 ms
+2024-08-07T06:45:55.948+03:00  INFO 42440 --- [mannschaft] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T06:45:56.025+03:00  INFO 42440 --- [mannschaft] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T06:45:56.072+03:00  INFO 42440 --- [mannschaft] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T06:45:56.434+03:00  INFO 42440 --- [mannschaft] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T06:45:56.474+03:00  INFO 42440 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T06:45:56.587+03:00  INFO 42440 --- [mannschaft] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@774f2992
+2024-08-07T06:45:56.590+03:00  INFO 42440 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T06:45:56.652+03:00  WARN 42440 --- [mannschaft] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T06:45:58.048+03:00  INFO 42440 --- [mannschaft] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T06:45:58.155+03:00  INFO 42440 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:45:58.649+03:00 DEBUG 42440 --- [mannschaft] [main] c.o.m.security.jwt.AuthTokenFilter       : Filter 'authenticationJwtTokenFilter' configured for use
+2024-08-07T06:45:58.746+03:00  INFO 42440 --- [mannschaft] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-07T06:45:58.748+03:00  WARN 42440 --- [mannschaft] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-07T06:45:58.989+03:00  INFO 42440 --- [mannschaft] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-07T06:45:59.733+03:00  WARN 42440 --- [mannschaft] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T06:46:00.312+03:00  WARN 42440 --- [mannschaft] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+2024-08-07T06:46:00.314+03:00  INFO 42440 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:46:00.317+03:00  INFO 42440 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-07T06:46:00.325+03:00  INFO 42440 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-07T06:46:00.329+03:00  INFO 42440 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-07T06:46:00.356+03:00  INFO 42440 --- [mannschaft] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-07T06:46:00.400+03:00 ERROR 42440 --- [mannschaft] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.opolos.mannschaft.MannschaftApplication.main(MannschaftApplication.java:30) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at io.github.waileong.fcm.config.FcmConnectionConfiguration.fcmRestClient(FcmConnectionConfiguration.java:139) ~[spring-boot-fcm-1.0.3.jar:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 20 common frames omitted
+
+2024-08-07T06:48:36.191+03:00  INFO 42628 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Starting MannschaftApplication using Java 17.0.10 with PID 42628 (/Users/paul85alex/Desktop/mannschaft/target/classes started by paul85alex in /Users/paul85alex/Desktop/mannschaft)
+2024-08-07T06:48:36.194+03:00 DEBUG 42628 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-08-07T06:48:36.195+03:00  INFO 42628 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T06:48:37.792+03:00  INFO 42628 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T06:48:37.936+03:00  INFO 42628 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 3 JPA repository interfaces.
+2024-08-07T06:48:39.126+03:00  INFO 42628 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-07T06:48:39.145+03:00  INFO 42628 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T06:48:39.145+03:00  INFO 42628 --- [mannschaft] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-07T06:48:39.228+03:00  INFO 42628 --- [mannschaft] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T06:48:39.228+03:00  INFO 42628 --- [mannschaft] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2931 ms
+2024-08-07T06:48:39.422+03:00  INFO 42628 --- [mannschaft] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T06:48:39.588+03:00  INFO 42628 --- [mannschaft] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T06:48:39.728+03:00  INFO 42628 --- [mannschaft] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T06:48:40.546+03:00  INFO 42628 --- [mannschaft] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T06:48:40.583+03:00  INFO 42628 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T06:48:40.732+03:00  INFO 42628 --- [mannschaft] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2712e8f4
+2024-08-07T06:48:40.735+03:00  INFO 42628 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T06:48:40.817+03:00  WARN 42628 --- [mannschaft] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T06:48:42.383+03:00  INFO 42628 --- [mannschaft] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T06:48:42.490+03:00  INFO 42628 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:48:43.006+03:00 DEBUG 42628 --- [mannschaft] [main] c.o.m.security.jwt.AuthTokenFilter       : Filter 'authenticationJwtTokenFilter' configured for use
+2024-08-07T06:48:43.087+03:00  INFO 42628 --- [mannschaft] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-07T06:48:43.088+03:00  WARN 42628 --- [mannschaft] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-07T06:48:43.172+03:00  INFO 42628 --- [mannschaft] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-07T06:48:44.152+03:00  WARN 42628 --- [mannschaft] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T06:48:44.734+03:00  WARN 42628 --- [mannschaft] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+2024-08-07T06:48:44.737+03:00  INFO 42628 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:48:44.740+03:00  INFO 42628 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-07T06:48:44.773+03:00  INFO 42628 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-07T06:48:44.776+03:00  INFO 42628 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-07T06:48:44.814+03:00  INFO 42628 --- [mannschaft] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-07T06:48:44.887+03:00 ERROR 42628 --- [mannschaft] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fcmRestClient' defined in class path resource [io/github/waileong/fcm/config/FcmConnectionConfiguration.class]: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.opolos.mannschaft.MannschaftApplication.main(MannschaftApplication.java:30) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestClient]: Factory method 'fcmRestClient' threw exception with message: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: A Project ID is required for Firebase Cloud Messaging (FCM). Please retrieve it from the 'project_id' field in the downloaded Firebase Admin SDK JSON file. Then, input it into the configuration for fcm.credential.project-id
+	at io.github.waileong.fcm.config.FcmConnectionConfiguration.fcmRestClient(FcmConnectionConfiguration.java:139) ~[spring-boot-fcm-1.0.3.jar:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 20 common frames omitted
+
+2024-08-07T06:50:56.217+03:00  INFO 42797 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Starting MannschaftApplication using Java 17.0.10 with PID 42797 (/Users/paul85alex/Desktop/mannschaft/target/classes started by paul85alex in /Users/paul85alex/Desktop/mannschaft)
+2024-08-07T06:50:56.224+03:00 DEBUG 42797 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-08-07T06:50:56.422+03:00  INFO 42797 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T06:50:58.236+03:00  INFO 42797 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T06:50:58.385+03:00  INFO 42797 --- [mannschaft] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 3 JPA repository interfaces.
+2024-08-07T06:50:59.745+03:00  INFO 42797 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-07T06:50:59.773+03:00  INFO 42797 --- [mannschaft] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T06:50:59.774+03:00  INFO 42797 --- [mannschaft] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-07T06:50:59.902+03:00  INFO 42797 --- [mannschaft] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T06:50:59.903+03:00  INFO 42797 --- [mannschaft] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3384 ms
+2024-08-07T06:51:00.351+03:00  INFO 42797 --- [mannschaft] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T06:51:00.467+03:00  INFO 42797 --- [mannschaft] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T06:51:00.523+03:00  INFO 42797 --- [mannschaft] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T06:51:00.943+03:00  INFO 42797 --- [mannschaft] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T06:51:00.988+03:00  INFO 42797 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T06:51:01.134+03:00  INFO 42797 --- [mannschaft] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f45db49
+2024-08-07T06:51:01.136+03:00  INFO 42797 --- [mannschaft] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T06:51:01.191+03:00  WARN 42797 --- [mannschaft] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-07T06:51:02.458+03:00  INFO 42797 --- [mannschaft] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T06:51:02.571+03:00  INFO 42797 --- [mannschaft] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T06:51:03.114+03:00 DEBUG 42797 --- [mannschaft] [main] c.o.m.security.jwt.AuthTokenFilter       : Filter 'authenticationJwtTokenFilter' configured for use
+2024-08-07T06:51:03.222+03:00  INFO 42797 --- [mannschaft] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-07T06:51:03.223+03:00  WARN 42797 --- [mannschaft] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-07T06:51:03.319+03:00  INFO 42797 --- [mannschaft] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-07T06:51:04.150+03:00  WARN 42797 --- [mannschaft] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T06:51:05.043+03:00  INFO 42797 --- [mannschaft] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-07T06:51:05.075+03:00  INFO 42797 --- [mannschaft] [main] c.o.mannschaft.MannschaftApplication     : Started MannschaftApplication in 9.674 seconds (process running for 10.327)
